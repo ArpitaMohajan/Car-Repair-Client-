@@ -18,7 +18,7 @@ const Payment = () => {
     }, [productId])
     return (
         <div>
-            <h3>Please Pyment For: {pro.name} for {pro.price}</h3>
+            <h3>Please Payment For: {pro.name} for {pro.price}</h3>
             {pro?.price && <Elements stripe={stripePromise}>
                 <CheckOutForm
                     pro={pro}

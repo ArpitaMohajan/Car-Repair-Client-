@@ -15,10 +15,10 @@ const AllProduct = ({ product }) => {
                 <p className='px-3 text-start'>{description}</p>
 
 
-                {/* <Link to={`/detailing/${_id}`}>
-                    <button className="btn btn-warning">Book Now</button>
-                </Link> */}
-                {/* <Link to={`/detailing/${_id}`}>
+                <Link to={`/detailing/${_id}`}>
+                    <button className="btn btn-info project-button">Details</button>
+                </Link>
+                {/* <Link to={`/payment/${_id}`}>
                     <button className="btn btn-info project-button">Book Now</button>
                 </Link> */}
                 {user?.payment ? <Button className="btn btn-info  project-button" onClick={price} variant="light">Paid</Button> :

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Button, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -9,9 +9,19 @@ const MyOrder = ({ order }) => {
     const { user } = useAuth()
     const [orders, setOrders] = useState([])
     const [success, setSuccess] = useState(false)
+    const [orderId, setOrderId] = useState("");
     const { _id, email, name, price, address, img } = order;
+    useEffect(() => {
+        fetch("https://radiant-cove-29383.herokuapp.com/allOrders")
+            .then((res) => res.json())
+            .then((data) => setOrders(data));
+    }, []);
+    const handleOrderId = (id) => {
+        setOrderId(id);
+        console.log(id);
+    };
     const handleDelete = id => {
-        const url = `https://radiant-cove-29383.herokuapp.com/dltOrders/${id}`
+        const url = `https://radiant-cove-29383.herokuapp.com/dltOrders/${_id}`
         fetch(url, {
             method: 'DELETE'
         })
@@ -36,10 +46,10 @@ const MyOrder = ({ order }) => {
             <Link to={`/myOrders/${_id}`}></Link>
             <Button className="btn btn-info project-button" onClick={() => handleDelete(order._id)} >Delete</Button>
 
-            {user?.payment ? <Button className="btn btn-info  project-button" onClick={price} variant="light">Paid</Button> :
-                <Link to={`/payment/${_id}`}>  <Button className="btn btn-info  project-button">Payment</Button></Link>}
+
+            {/* <Link to={`/payment/${_id}`}> <Button className="btn btn-info project-button">Book Now</Button></Link> */}
             {
-                success && <Alert variant="success">Successfully purchse</Alert>
+                success && <Alert variant="success">Successfully purchase</Alert>
             }
         </div>
 
