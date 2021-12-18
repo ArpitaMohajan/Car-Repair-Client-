@@ -59,15 +59,15 @@ const Sidebar = () => {
                                                 Manage Order
                                             </Link>
                                         </li>
-                                        <Route path="/dashboards/payment" element={<Payment />}>
 
-                                            <li>
-                                                <i className='fas fa-cog mx-2'></i>
-                                                <Link to="/dashboards/payment">
-                                                    Payment
-                                                </Link>
-                                            </li>
-                                        </Route>
+
+                                        <li>
+                                            <i className='fas fa-cog mx-2'></i>
+                                            <Link to="/dashboards/payment">
+                                                Payment
+                                            </Link>
+                                        </li>
+
                                     </>
                                 )
                             }
