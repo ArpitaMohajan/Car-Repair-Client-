@@ -24,10 +24,7 @@ const Payment = () => {
                     pro={pro}
                 />
             </Elements>}
-            <div>
-                <Link to='/dashboards'><button className='upload-btn'>Go Dashboard</button></Link>
 
-            </div>
         </div>
 
     );
