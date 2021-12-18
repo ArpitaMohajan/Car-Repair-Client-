@@ -1,8 +1,9 @@
 import { isAdmin } from '@firebase/util';
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, Route } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import Payment from '../Payment/Payment';
 import './Sidebar.css'
 const Sidebar = () => {
     const { logOut, admin } = useAuth()
@@ -58,13 +59,15 @@ const Sidebar = () => {
                                                 Manage Order
                                             </Link>
                                         </li>
-                                        <li>
-                                            <i className='fas fa-cog mx-2'></i>
-                                            <Link to="/dashboards/payment">
-                                                Payment
-                                            </Link>
-                                        </li>
+                                        <Route path="/dashboards/payment" element={<Payment />}>
 
+                                            <li>
+                                                <i className='fas fa-cog mx-2'></i>
+                                                <Link to="/dashboards/payment">
+                                                    Payment
+                                                </Link>
+                                            </li>
+                                        </Route>
                                     </>
                                 )
                             }
