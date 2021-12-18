@@ -16,7 +16,7 @@ const CheckOutForm = ({ pro }) => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://radiant-cove-29383.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -97,7 +97,7 @@ const CheckOutForm = ({ pro }) => {
                 last4: paymentMethod.card.last4,
                 transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
-            const url = `http://localhost:5000/products/${_id}`
+            const url = `https://radiant-cove-29383.herokuapp.com/products/${_id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
