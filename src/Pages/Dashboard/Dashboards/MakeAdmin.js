@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../../hooks/useAuth';
 
@@ -13,7 +14,7 @@ const MakeAdmin = () => {
     const handleAdminSubmit = e => {
 
         const user = { email }
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://radiant-cove-29383.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -49,7 +50,10 @@ const MakeAdmin = () => {
             </form>
 
             {success && Swal.fire("Make Admin  successfully")}
+            <div>
+                <Link to='/dashboards'><button className='upload-btn'>Go Dashboard</button></Link>
 
+            </div>
         </div>
     );
 };

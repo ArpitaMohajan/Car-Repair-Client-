@@ -1,7 +1,7 @@
 .sidebar {
     min-height: 92vh;
-    /* position: fixed;
-    display:block */
+     position: fixed;
+    /* display:block */ 
   }
   .sidebar ul li,
   a {

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import './AddProduct.css'
 import { Col, Form, Row, Button } from "react-bootstrap";
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 const AddProduct = () => {
 
     const [image, setImage] = useState(null)
@@ -18,15 +20,15 @@ const AddProduct = () => {
         formData.append("price", price);
         formData.append("name", name);
         formData.append("desc", desc);
-
-        fetch('http://localhost:5000/services', {
+        console.log(formData)
+        fetch('https://radiant-cove-29383.herokuapp.com/services', {
             method: "POST",
             body: formData,
         })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert("service added successfully");
+                    Swal.fire("service added successfully");
 
                 }
             })
@@ -40,7 +42,7 @@ const AddProduct = () => {
 
     return (
         <div className="add-service">
-            <h2>Add Product</h2>
+
             <Form className="booking-container" onSubmit={handleSubmit}>
                 <div
                     className="form-main py-5 my-5 shadow-lg"
@@ -114,6 +116,10 @@ const AddProduct = () => {
                     </div>
                 </div>
             </Form>
+            <div>
+                <Link to='/dashboards'><button className='upload-btn'>Go Dashboard</button></Link>
+
+            </div>
         </div>
     );
 };

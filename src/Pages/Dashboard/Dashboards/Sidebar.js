@@ -27,12 +27,7 @@ const Sidebar = () => {
                                     <i className='fas fa-user mx-2 ' />
                                     <Link to="/dashboards/review">Review</Link>
                                 </li>
-                                {/* <li>
-                                    <i className='fas fa-user-plus mx-2'></i>
-                                    <Link to="/dashboards/makeAdmin">
-                                        Make Admin
-                                    </Link>
-                                </li> */}
+
 
                             </>
 
@@ -44,12 +39,7 @@ const Sidebar = () => {
                             {
                                 admin && (
                                     <>
-                                        <li>
-                                            <i className='fas fa-cog mx-2'></i>
-                                            <Link to="/dashboards/addProduct">
-                                                Add Service
-                                            </Link>
-                                        </li>
+
                                         <li>
                                             <i className='fas fa-user-plus mx-2'></i>
                                             <Link to="/dashboards/makeAdmin">
@@ -68,7 +58,12 @@ const Sidebar = () => {
                                                 Manage Order
                                             </Link>
                                         </li>
-
+                                        <li>
+                                            <i className='fas fa-cog mx-2'></i>
+                                            <Link to="/dashboards/payment">
+                                                Payment
+                                            </Link>
+                                        </li>
 
                                     </>
                                 )

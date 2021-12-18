@@ -61,6 +61,7 @@ function App() {
 
             <Route path="/dashboards" element={<Dashboards />}>
             </Route>
+
             <Route path="/dashboards/myOrders" element={<MyOrders />}>
             </Route>
             <Route path="/dashboards/makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>}>
@@ -71,7 +72,7 @@ function App() {
             </Route>
             <Route path="/dashboards/profile" element={<AdminRoute><Profile /></AdminRoute>}>
             </Route>
-            <Route path="/payment/:productId" element={<Payment />}>
+            <Route path="/payment/:productId" element={<PrivateRoute><Payment /></PrivateRoute>}>
             </Route>
 
 

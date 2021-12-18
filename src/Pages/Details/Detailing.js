@@ -30,7 +30,7 @@ const Detailing = () => {
     const onSubmit = data => {
 
         console.log(data)
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://radiant-cove-29383.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
 
@@ -41,7 +41,7 @@ const Detailing = () => {
             })
     };
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://radiant-cove-29383.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setBookingDetail(data))
     }, []);

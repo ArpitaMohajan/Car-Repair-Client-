@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../../hooks/useAuth';
 
@@ -17,7 +17,7 @@ const Review = () => {
 
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/review', data)
+        axios.post('https://radiant-cove-29383.herokuapp.com/review', data)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire('added successfully')
@@ -61,6 +61,10 @@ const Review = () => {
                     value="Register"
                 />
             </form>
+            <div>
+                <Link to='/dashboards'><button className='upload-btn'>Go Dashboard</button></Link>
+
+            </div>
         </div>
     );
 };

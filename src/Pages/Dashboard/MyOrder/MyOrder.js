@@ -11,7 +11,7 @@ const MyOrder = ({ order }) => {
     const [success, setSuccess] = useState(false)
     const { _id, email, name, price, address, img } = order;
     const handleDelete = id => {
-        const url = `http://localhost:5000/dltOrders/${id}`
+        const url = `https://radiant-cove-29383.herokuapp.com/dltOrders/${id}`
         fetch(url, {
             method: 'DELETE'
         })

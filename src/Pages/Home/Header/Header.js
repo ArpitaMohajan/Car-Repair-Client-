@@ -13,22 +13,15 @@ const Header = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link href="/home#home" className="text-info">Home</Nav.Link>
                         <Nav.Link href="/services" className="text-info">Services</Nav.Link>
-                        <Nav.Link href="/home#about" className="text-info text-bold" >Experts</Nav.Link>
+                        <Nav.Link href="/home#contact" className="text-info text-bold" >Contact</Nav.Link>
                         <Nav.Link href="/home#addProducts" className="text-info text-bold" >All Product</Nav.Link>
-                        {/* <Nav.Link href="/addProduct" className="text-info text-bold" >Add Product</Nav.Link> */}
-                        {/* <Nav.Link href="/login" className="text-info text-bold" >Login</Nav.Link> */}
+
                         <Nav.Link href="/dashboards" className="text-info text-bold" >Dashboard</Nav.Link>
 
-                        {/* <Nav.Link href="/addProducts">All Product</Nav.Link> */}
 
-
-
-                        {/* {
-                        user.email && <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-                    } */}
                         {user?.email ?
-                            <Button onClick={logOut} variant="light">Logout</Button> :
-                            <Nav.Link href="/login">Login</Nav.Link>}
+                            <Button className='text-info text-bold' onClick={logOut} >Logout</Button> :
+                            <Nav.Link className="text-info text-bold" href="/login">Login</Nav.Link>}
 
                         <Navbar.Text>
                             Signed in as: <a href="#login">{user.displayName}</a>

@@ -31,7 +31,7 @@ const Details = () => {
 
 
         console.log(data)
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://radiant-cove-29383.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire("Confirmed!", "", "success");
@@ -41,7 +41,7 @@ const Details = () => {
             })
     };
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://radiant-cove-29383.herokuapp.com/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setBookingDetail(data))
     }, [])

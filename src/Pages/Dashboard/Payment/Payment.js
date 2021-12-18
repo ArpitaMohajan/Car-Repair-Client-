@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { loadStripe } from '@stripe/stripe-js';
 import CheckOutForm from './CheckOutForm';
@@ -11,7 +11,7 @@ const Payment = () => {
     const { productId } = useParams();
     const [pro, setPro] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://radiant-cove-29383.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setPro(data))
 
@@ -24,8 +24,12 @@ const Payment = () => {
                     pro={pro}
                 />
             </Elements>}
+            <div>
+                <Link to='/dashboards'><button className='upload-btn'>Go Dashboard</button></Link>
 
+            </div>
         </div>
+
     );
 };
 

@@ -52,7 +52,7 @@ const Login = () => {
                         <Link to='/register'>New User? Please Registered</Link>
                         <br />
                         <br />
-                        <button type="submit" className="btn btn-primary">Login</button>
+                        <button type="submit" className="btn btn-primary upload-btn">Login</button>
 
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const Login = () => {
                 authError && <Alert variant="danger">{authError}</Alert>
             }
             <p>---------------------</p>
-            <button onClick={handleGoogleSignIn}>Google Sign in</button>
+            <button className='upload-btn' onClick={handleGoogleSignIn}>Google Sign in</button>
         </Container>
     );
 };

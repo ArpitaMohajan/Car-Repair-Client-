@@ -8,7 +8,7 @@ const MyOrders = () => {
     const { user } = useAuth()
     const [error, setError] = useState(false)
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user.email}`)
+        fetch(`https://radiant-cove-29383.herokuapp.com/orders?email=${user.email}`)
             .then(res => res.json())
             .then(result => setOrders(result))
             .catch(error => setError(true))
