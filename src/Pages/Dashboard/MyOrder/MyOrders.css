@@ -1,0 +1,50 @@
+.order-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+   
+   
+    }
+  
+    /* Make it responsive */
+    @media only screen and (max-width:688px) {
+    .order-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    }
+    @media only screen and (min-width:689px) and (max-width: 991px){
+    .order-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    .order{
+        width: 75%;
+       /* background-color: white; */
+       grid-template-columns: repeat(3, 1fr);
+       border-radius: 20px;
+      
+      
+    }
+    .order:hover{
+        transform: scale(1.07);
+        transition: 1s ease-out;
+        border: 2px solid #fd09d4 !important;
+        color: hotpink;
+        
+      }
+      .profile-options{
+        display: flex;
+        justify-content:space-evenly;
+      }
+      .project-button {
+        margin-top: 10px;
+        transition: 0.9s;
+      }
+      .project-button a {
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+      }
+      .project-button:hover {
+        background-color: blue;
+      }
