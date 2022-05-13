@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
 import './Detailing.css'
-const Detailing = () => {
+const Detailing = ({ order }) => {
+    const { _id, email, name, price, address, img } = order;
     const [bookingDetail, setBookingDetail] = useState({})
     const { register, handleSubmit, reset } = useForm()
 
@@ -77,6 +78,8 @@ const Detailing = () => {
                         <input className="in" type="submit" value="Submit" />
 
                     </form>
+                    <Link to={`/payment/${_id}`}>
+                        <Button className="btn btn-info project-button">Book Now</Button></Link>
                 </Col>
             </Row>
 
