@@ -64,14 +64,15 @@ function App() {
 
             <Route path="/dashboards/myOrders" element={<MyOrders />}>
             </Route>
+            <Route path="/dashboards/profile" element={<Profile />}>
+            </Route>
             <Route path="/dashboards/makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>}>
             </Route>
             <Route path="/dashboards/review" element={<AdminRoute><Review /></AdminRoute>}>
             </Route>
             <Route path="/dashboards/manageOrder" element={<AdminRoute><ManageOrder /></AdminRoute>}>
             </Route>
-            <Route path="/dashboards/profile" element={<Profile />}>
-            </Route>
+
             <Route path="/payment/:productId" element={<PrivateRoute><Payment /></PrivateRoute>}>
             </Route>
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link, Outlet, Route } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import Payment from '../Payment/Payment';
+// import Payment from '../Payment/Payment';
 import './Sidebar.css'
 const Sidebar = () => {
     const { logOut, admin } = useAuth()
@@ -29,7 +29,12 @@ const Sidebar = () => {
                                     <Link to="/dashboards/review">Review</Link>
                                 </li>
 
-
+                                <li>
+                                    <i className='fas fa-cog mx-2'></i>
+                                    <Link to="/dashboards/payment">
+                                        Payment
+                                    </Link>
+                                </li>
                             </>
 
 
@@ -61,12 +66,7 @@ const Sidebar = () => {
                                         </li>
 
 
-                                        <li>
-                                            <i className='fas fa-cog mx-2'></i>
-                                            <Link to="/dashboards/payment">
-                                                Payment
-                                            </Link>
-                                        </li>
+
 
                                     </>
                                 )
